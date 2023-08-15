@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/core/app_colors.dart';
-import 'package:plant_app/pages/create_account_page.dart';
+import 'package:plant_app/pages/login/create_account_page.dart';
 import 'package:plant_app/component/elevated_button_component.dart';
 
 class WelcomePage extends StatelessWidget {

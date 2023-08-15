@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/component/elevated_button_component.dart';
-import 'package:plant_app/pages/login_page.dart';
+import 'package:plant_app/pages/login/login_page.dart';
 import 'package:plant_app/component/input_text_component.dart';
 
 class CreateAccountPage extends StatelessWidget {

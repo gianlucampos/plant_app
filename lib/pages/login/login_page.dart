@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/component/elevated_button_component.dart';
 import 'package:plant_app/component/input_text_component.dart';
+import 'package:plant_app/pages/home/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -40,7 +41,13 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
-            elevatedButton(label: 'Entrar', onPressedAction: () {   }),
+            elevatedButton(
+              label: 'Entrar',
+              onPressedAction: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => HomePage()),
+              ),
+            ),
           ],
         ),
       ),
