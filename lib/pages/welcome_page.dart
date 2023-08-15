@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/core/app_colors.dart';
 import 'package:plant_app/pages/create_account_page.dart';
+import 'package:plant_app/component/elevated_button_component.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -26,15 +27,12 @@ class WelcomePage extends StatelessWidget {
                 'Seja um voluntário e ajude o mundo a ficar um pouco mais verde e tenha seu mascote verdinho'),
             const Spacer(flex: 16),
             Center(
-              child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all<Color>(
-                        AppColors.greenSecondary)),
-                onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CreateAccountPage())),
-                child: const Text('Quero meu mascote verdinho'),
+              child: elevatedButton(
+                label: 'Quero meu mascote verdinho',
+                onPressedAction: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => CreateAccountPage()),
+                ),
               ),
             ),
           ],

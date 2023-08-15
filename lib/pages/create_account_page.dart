@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:plant_app/core/app_colors.dart';
+import 'package:plant_app/component/elevated_button_component.dart';
+import 'package:plant_app/pages/login_page.dart';
+import 'package:plant_app/component/input_text_component.dart';
 
 class CreateAccountPage extends StatelessWidget {
   CreateAccountPage({super.key});
@@ -24,29 +26,19 @@ class CreateAccountPage extends StatelessWidget {
                   key: _formKey,
                   child: Column(
                     children: [
-                      _inputText(label: 'Nome'),
-                      _inputText(label: 'Email'),
-                      _inputText(label: 'Telefone'),
-                      _inputText(label: 'Senha'),
+                      inputText(label: 'Nome'),
+                      inputText(label: 'Email'),
+                      inputText(label: 'Telefone'),
+                      inputText(label: 'Senha'),
                     ],
                   ),
                 ),
               ),
-              Center(
-                child: SizedBox(
-                  height: 50,
-                  width: 200,
-                  child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all<Color>(
-                            AppColors.greenSecondary)),
-                    onPressed: () {},
-                    // onPressed: () => Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => CreateAccountPage())),
-                    child: const Text('Cadastrar'),
-                  ),
+              elevatedButton(
+                label: 'Cadastrar',
+                onPressedAction: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
                 ),
               ),
               const Divider(color: Colors.transparent, height: 5),
@@ -58,31 +50,5 @@ class CreateAccountPage extends StatelessWidget {
             ],
           ),
         ));
-  }
-
-  Widget _inputText({required String label}) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(label,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        const Divider(color: Colors.transparent, height: 15),
-        TextFormField(
-          decoration: InputDecoration(
-            labelStyle: const TextStyle(color: Colors.black),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(width: 3, color: Colors.black),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-              borderSide: const BorderSide(width: 3, color: Colors.black),
-            ),
-            fillColor: Colors.white,
-          ),
-        ),
-        const Divider(color: Colors.transparent, height: 15),
-      ],
-    );
   }
 }
