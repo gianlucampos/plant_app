@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:plant_app/component/circle_avatar_component.dart';
 import 'package:plant_app/core/app_colors.dart';
+import 'package:plant_app/pages/home/profile_page.dart';
 
-const linkAvatar =
-    '''
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnLaFPMPSwjs6J-eESrFLRymDkDBQQ_Q7Wpw&usqp=CAU    ''';
-const linkAvatar2 =
-    'https://img.freepik.com/free-icon/user_318-644360.jpg?size=626&ext=jpg';
+Map<String, Widget> routes = {
+  'homePage': ProfilePage(),
+  'profilePage': ProfilePage(),
+  'mascotsPage': ProfilePage(),
+  'plantingInfoPage': ProfilePage(),
+};
+
+enum RoutePage { homePage, profilePage, mascotsPage, plantingInfoPage }
 
 class DrawerWidget extends StatefulWidget {
   const DrawerWidget({
@@ -17,15 +22,21 @@ class DrawerWidget extends StatefulWidget {
 }
 
 class _DrawerWidgetState extends State<DrawerWidget> {
-  int _selectedIndex = 0;
+  RoutePage _selectedIndex = RoutePage.homePage;
 
-  void _onItemTapped(int index) {
+  void _onItemTapped(RoutePage index) {
     setState(() {
       _selectedIndex = index;
     });
+
+    Widget page = routes[_selectedIndex.name] as Widget;
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => page),
+    );
   }
 
-  Color _chooseColor(int index) {
+  Color _chooseColor(RoutePage index) {
     return _selectedIndex == index ? AppColors.drawerIcons : Colors.white;
   }
 
@@ -46,15 +57,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 children: [
-                  CircleAvatar(
-                    radius: 20,
-                    backgroundImage: NetworkImage(linkAvatar),
-                    backgroundColor: Colors.transparent,
-                  ),
-                  SizedBox(width: 10),
-                  Text('Pepe',
+                  circleAvatar(),
+                  const SizedBox(width: 10),
+                  const Text('Pepe',
                       style: TextStyle(fontSize: 20, color: Colors.white))
                 ],
               ),
@@ -63,43 +70,45 @@ class _DrawerWidgetState extends State<DrawerWidget> {
               ListTile(
                 title: Text('Home',
                     style: TextStyle(
-                      color: _chooseColor(0),
+                      color: _chooseColor(RoutePage.homePage),
                       fontWeight: FontWeight.w800,
                       fontSize: 15,
                     )),
-                leading: Icon(Icons.home, color: _chooseColor(0)),
-                selected: _selectedIndex == 0,
+                leading:
+                    Icon(Icons.home, color: _chooseColor(RoutePage.homePage)),
+                selected: _selectedIndex == RoutePage.homePage,
+                onTap: () => _onItemTapped(RoutePage.homePage),
                 selectedTileColor: Colors.white,
-                onTap: () => _onItemTapped(0),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
               ),
               ListTile(
                 title: Text('Perfil',
                     style: TextStyle(
-                      color: _chooseColor(1),
+                      color: _chooseColor(RoutePage.profilePage),
                       fontWeight: FontWeight.w800,
                       fontSize: 15,
                     )),
-                leading: Icon(Icons.account_box, color: _chooseColor(1)),
-                selected: _selectedIndex == 1,
+                leading: Icon(Icons.account_box,
+                    color: _chooseColor(RoutePage.profilePage)),
+                selected: _selectedIndex == RoutePage.profilePage,
+                onTap: () => _onItemTapped(RoutePage.profilePage),
                 selectedTileColor: Colors.white,
-                onTap: () => _onItemTapped(1),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
               ),
               ListTile(
                 title: Text('Meus mascotes',
                     style: TextStyle(
-                      color: _chooseColor(2),
+                      color: _chooseColor(RoutePage.mascotsPage),
                       fontWeight: FontWeight.w800,
                       fontSize: 15,
                     )),
-                leading:
-                    Icon(Icons.energy_savings_leaf, color: _chooseColor(2)),
-                selected: _selectedIndex == 2,
+                leading: Icon(Icons.energy_savings_leaf,
+                    color: _chooseColor(RoutePage.mascotsPage)),
+                selected: _selectedIndex == RoutePage.mascotsPage,
+                onTap: () => _onItemTapped(RoutePage.mascotsPage),
                 selectedTileColor: Colors.white,
-                onTap: () => _onItemTapped(2),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
               ),
@@ -107,14 +116,15 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 selectedColor: Colors.white,
                 title: Text('O plantio',
                     style: TextStyle(
-                      color: _chooseColor(3),
+                      color: _chooseColor(RoutePage.mascotsPage),
                       fontWeight: FontWeight.w800,
                       fontSize: 15,
                     )),
-                leading: Icon(Icons.account_tree, color: _chooseColor(3)),
-                selected: _selectedIndex == 3,
+                leading: Icon(Icons.account_tree,
+                    color: _chooseColor(RoutePage.mascotsPage)),
+                selected: _selectedIndex == RoutePage.mascotsPage,
+                onTap: () => _onItemTapped(RoutePage.mascotsPage),
                 selectedTileColor: Colors.white,
-                onTap: () => _onItemTapped(3),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
               ),
