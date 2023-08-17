@@ -26,13 +26,16 @@ class _HomePageState extends State<HomePage> {
               child: const Icon(Icons.menu),
               onTap: () => _scaffoldKey.currentState!.openDrawer(),
             ),
-            const SizedBox(
+            SizedBox(
               width: 320,
               child: SearchBar(
-                leading: Icon(Icons.search),
+                leading: const Icon(Icons.search),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                surfaceTintColor:
+                    MaterialStateProperty.all<Color>(Colors.white),
                 hintText: 'Pesquisar local',
-                hintStyle:
-                    MaterialStatePropertyAll(TextStyle(color: Colors.grey)),
+                hintStyle: const MaterialStatePropertyAll(
+                    TextStyle(color: Colors.grey)),
               ),
             ),
           ],
@@ -63,14 +66,11 @@ class _HomePageState extends State<HomePage> {
       child: Center(
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 40),
-          title: const Row(
+          title: Row(
             children: [
-              Icon(Icons.place_outlined, color: Colors.white),
+              const Icon(Icons.place_outlined, color: Colors.white),
               Text('Pontos de plantio',
-                  style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      fontSize: 15,
-                      color: Colors.white)),
+                  style: Theme.of(context).textTheme.labelMedium),
             ],
           ),
           subtitle: const Text(
@@ -93,14 +93,11 @@ class _HomePageState extends State<HomePage> {
           color: AppColors.green, borderRadius: BorderRadius.circular(35)),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 40, vertical: 5),
-        title: const Row(
+        title: Row(
           children: [
-            Icon(Icons.account_tree_outlined, color: Colors.white),
+            const Icon(Icons.account_tree_outlined, color: Colors.white),
             Text('Sua(s) planta(s)',
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 15,
-                    color: Colors.white)),
+                style: Theme.of(context).textTheme.labelMedium),
           ],
         ),
         subtitle: const Text(

@@ -16,7 +16,6 @@ class ProfilePage extends StatelessWidget {
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))
         ),
       ),
-      backgroundColor: AppColors.background,
       body: Center(
         child: Container(
           height: MediaQuery.of(context).size.height * 0.6,
@@ -48,24 +47,24 @@ class ProfilePage extends StatelessWidget {
                       left: 200,
                       child: Icon(Icons.edit_outlined),
                     ),
-                    const Positioned(
+                    Positioned(
                       top: 110,
                       left: 30,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Nome', style: TextStyle(fontSize: 18)),
-                          Text('Penelope Coelho', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20),
-                          Text('Email', style: TextStyle(fontSize: 18)),
-                          Text('penelope10@@gmail.com', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20),
-                          Text('Telefone', style: TextStyle(fontSize: 18)),
-                          Text('11 9876-5478', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          SizedBox(height: 20),
-                          Text('Localização', style: TextStyle(fontSize: 18)),
-                          Text('Rua Flores de Mel, 69 - SP', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text('Nome', style: Theme.of(context).textTheme.bodyLarge),
+                          Text('Penelope Coelho', style: Theme.of(context).textTheme.labelLarge),
+                          const SizedBox(height: 20),
+                          Text('Email', style: Theme.of(context).textTheme.bodyLarge),
+                          Text('penelope10@@gmail.com', style: Theme.of(context).textTheme.labelLarge),
+                          const SizedBox(height: 20),
+                          Text('Telefone', style: Theme.of(context).textTheme.bodyLarge),
+                          Text('11 9876-5478', style: Theme.of(context).textTheme.labelLarge),
+                          const SizedBox(height: 20),
+                          Text('Localização', style: Theme.of(context).textTheme.bodyLarge),
+                          Text('Rua Flores de Mel, 69 - SP', style: Theme.of(context).textTheme.labelLarge),
                         ],
                       ),
                     )

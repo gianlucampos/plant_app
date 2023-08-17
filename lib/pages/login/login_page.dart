@@ -16,16 +16,16 @@ class LoginPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            const Center(
+            Center(
               child: Text(
                 'Bem vindo de volta',
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 35),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
-            const Center(
+            Center(
               child: Text(
                 'Reveja seus mascotinhos e plant!',
-                style: TextStyle(fontWeight: FontWeight.w800, fontSize: 15),
+                style: Theme.of(context).textTheme.labelLarge,
               ),
             ),
             const Divider(color: Colors.transparent, height: 20),
@@ -45,7 +45,7 @@ class LoginPage extends StatelessWidget {
               label: 'Entrar',
               onPressedAction: () => Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => HomePage()),
+                MaterialPageRoute(builder: (context) => const HomePage()),
               ),
             ),
           ],

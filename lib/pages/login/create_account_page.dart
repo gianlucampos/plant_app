@@ -11,44 +11,44 @@ class CreateAccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text('Criar Conta',
-                  style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Form(
-                  key: _formKey,
-                  child: Column(
-                    children: [
-                      inputText(label: 'Nome'),
-                      inputText(label: 'Email'),
-                      inputText(label: 'Telefone'),
-                      inputText(label: 'Senha'),
-                    ],
-                  ),
+        body: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Criar Conta', style: Theme.of(context).textTheme.titleMedium),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    inputText(label: 'Nome'),
+                    inputText(label: 'Email'),
+                    inputText(label: 'Telefone'),
+                    inputText(label: 'Senha'),
+                  ],
                 ),
               ),
-              elevatedButton(
-                label: 'Cadastrar',
-                onPressedAction: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
-                ),
+            ),
+            elevatedButton(
+              textStyle: Theme.of(context).textTheme.labelLarge!.merge(const TextStyle(color: Colors.white)),
+              label: 'Cadastrar',
+              onPressedAction: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
               ),
-              const Divider(color: Colors.transparent, height: 5),
-              const Center(
-                  child: Text(
-                'Já tem conta ? ENTRAR',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ))
-            ],
-          ),
-        ));
+            ),
+            const Divider(color: Colors.transparent, height: 5),
+            Center(
+                child: Text(
+              'Já tem conta ? ENTRAR',
+              style: Theme.of(context).textTheme.labelLarge,
+            ))
+          ],
+        ),
+      ),
+    ));
   }
 }

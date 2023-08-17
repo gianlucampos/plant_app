@@ -4,8 +4,7 @@ import 'package:plant_app/core/app_colors.dart';
 import 'package:plant_app/pages/home/profile_page.dart';
 
 Map<String, Widget> routes = {
-  'homePage': ProfilePage(),
-  'profilePage': ProfilePage(),
+  'profilePage': const ProfilePage(),
   'mascotsPage': ProfilePage(),
   'plantingInfoPage': ProfilePage(),
 };
@@ -29,6 +28,10 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       _selectedIndex = index;
     });
 
+    if(_selectedIndex == RoutePage.homePage) {
+      Navigator.pop(context);
+      return;
+    }
     Widget page = routes[_selectedIndex.name] as Widget;
     Navigator.push(
       context,
@@ -116,14 +119,14 @@ class _DrawerWidgetState extends State<DrawerWidget> {
                 selectedColor: Colors.white,
                 title: Text('O plantio',
                     style: TextStyle(
-                      color: _chooseColor(RoutePage.mascotsPage),
+                      color: _chooseColor(RoutePage.plantingInfoPage),
                       fontWeight: FontWeight.w800,
                       fontSize: 15,
                     )),
                 leading: Icon(Icons.account_tree,
-                    color: _chooseColor(RoutePage.mascotsPage)),
-                selected: _selectedIndex == RoutePage.mascotsPage,
-                onTap: () => _onItemTapped(RoutePage.mascotsPage),
+                    color: _chooseColor(RoutePage.plantingInfoPage)),
+                selected: _selectedIndex == RoutePage.plantingInfoPage,
+                onTap: () => _onItemTapped(RoutePage.plantingInfoPage),
                 selectedTileColor: Colors.white,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40)),
