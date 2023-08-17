@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/component/circle_avatar_component.dart';
 import 'package:plant_app/core/app_colors.dart';
+import 'package:plant_app/pages/home/planting_info_page.dart';
 import 'package:plant_app/pages/home/profile_page.dart';
 
 Map<String, Widget> routes = {
   'profilePage': const ProfilePage(),
   'mascotsPage': ProfilePage(),
-  'plantingInfoPage': ProfilePage(),
+  'plantingInfoPage': const PlantingInfoPage(),
 };
 
 enum RoutePage { homePage, profilePage, mascotsPage, plantingInfoPage }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/component/circle_avatar_component.dart';
-import 'package:plant_app/core/app_colors.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -10,11 +9,6 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 150,
-        backgroundColor: AppColors.green,
-        elevation: 1,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))
-        ),
       ),
       body: Center(
         child: Container(
