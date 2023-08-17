@@ -14,21 +14,28 @@ class LoginPage extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
               child: Text(
                 'Bem vindo de volta',
-                style: Theme.of(context).textTheme.titleMedium,
+                style: Theme.of(context)
+                    .textTheme
+                    .displaySmall!
+                    .merge(const TextStyle(fontWeight: FontWeight.bold)),
               ),
             ),
+            const Divider(color: Colors.transparent, height: 10),
             Center(
               child: Text(
                 'Reveja seus mascotinhos e plant!',
-                style: Theme.of(context).textTheme.labelLarge,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge!
+                    .merge(const TextStyle(fontWeight: FontWeight.bold)),
               ),
             ),
-            const Divider(color: Colors.transparent, height: 20),
+            const Divider(color: Colors.transparent, height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Form(

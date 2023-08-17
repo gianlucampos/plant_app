@@ -17,7 +17,11 @@ class CreateAccountPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('Criar Conta', style: Theme.of(context).textTheme.titleMedium),
+            Text('Criar Conta',
+                style: Theme.of(context)
+                    .textTheme
+                    .displaySmall!
+                    .merge(const TextStyle(fontWeight: FontWeight.bold))),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: Form(
@@ -33,7 +37,9 @@ class CreateAccountPage extends StatelessWidget {
               ),
             ),
             elevatedButton(
-              textStyle: Theme.of(context).textTheme.labelLarge!.merge(const TextStyle(color: Colors.white)),
+              textStyle: Theme.of(context).textTheme.titleMedium!.merge(
+                  const TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
               label: 'Cadastrar',
               onPressedAction: () => Navigator.push(
                 context,
@@ -44,7 +50,10 @@ class CreateAccountPage extends StatelessWidget {
             Center(
                 child: Text(
               'Já tem conta ? ENTRAR',
-              style: Theme.of(context).textTheme.labelLarge,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleMedium!
+                  .merge(const TextStyle(fontWeight: FontWeight.bold)),
             ))
           ],
         ),

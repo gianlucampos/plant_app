@@ -33,25 +33,20 @@ class PlantingInfoPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Fazer o berço de plantio',
-                  style: Theme.of(context).textTheme.labelLarge),
+                  style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: 15),
               Text(
                 AppLabels.plantioInfo,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelSmall!
-                    .merge(const TextStyle(color: Colors.black)),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               const SizedBox(height: 15),
-              Text('Retire o saquinho ou embalagem que está no entorno do torrão',
-                  style: Theme.of(context).textTheme.labelLarge),
+              Text(
+                  'Retire o saquinho ou embalagem que está no entorno do torrão',
+                  style: Theme.of(context).textTheme.titleMedium),
               const SizedBox(height: 15),
               Text(
                 AppLabels.plantioInfo2,
-                style: Theme.of(context)
-                    .textTheme
-                    .labelSmall!
-                    .merge(const TextStyle(color: Colors.black)),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
             ],
           ),

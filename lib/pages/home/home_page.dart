@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/core/app_colors.dart';
+import 'package:plant_app/pages/home/add_mascot_page.dart';
 import 'package:plant_app/pages/home/widgets/drawer_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,6 +39,13 @@ class _HomePageState extends State<HomePage> {
                     TextStyle(color: Colors.grey)),
               ),
             ),
+            GestureDetector(
+              child: const Icon(Icons.place_outlined),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const AddMascotPage())),
+            ),
           ],
         ),
       ),
@@ -70,7 +78,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               const Icon(Icons.place_outlined, color: Colors.white),
               Text('Pontos de plantio',
-                  style: Theme.of(context).textTheme.labelMedium),
+                  style: Theme.of(context).textTheme.titleMedium!.merge(
+                      const TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold))),
             ],
           ),
           subtitle: const Text(
@@ -97,7 +107,9 @@ class _HomePageState extends State<HomePage> {
           children: [
             const Icon(Icons.account_tree_outlined, color: Colors.white),
             Text('Sua(s) planta(s)',
-                style: Theme.of(context).textTheme.labelMedium),
+                style: Theme.of(context).textTheme.titleMedium!.merge(
+                    const TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold))),
           ],
         ),
         subtitle: const Text(

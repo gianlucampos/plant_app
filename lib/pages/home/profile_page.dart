@@ -48,30 +48,51 @@ class ProfilePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('Nome', style: Theme.of(context).textTheme.bodyLarge),
-                          Text('Penelope Coelho', style: Theme.of(context).textTheme.labelLarge),
+                          Text('Nome',
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          Text(
+                            'Penelope Coelho',
+                            style: Theme.of(context).textTheme.bodyLarge!.merge(
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                          ),
                           const SizedBox(height: 20),
-                          Text('Email', style: Theme.of(context).textTheme.bodyLarge),
-                          Text('penelope10@@gmail.com', style: Theme.of(context).textTheme.labelLarge),
+                          Text('Email',
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          Text(
+                            'penelope10@gmail.com',
+                            style: Theme.of(context).textTheme.bodyLarge!.merge(
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                          ),
                           const SizedBox(height: 20),
-                          Text('Telefone', style: Theme.of(context).textTheme.bodyLarge),
-                          Text('11 9876-5478', style: Theme.of(context).textTheme.labelLarge),
+                          Text('Telefone',
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          Text(
+                            '11 9876-5478',
+                            style: Theme.of(context).textTheme.bodyLarge!.merge(
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                          ),
                           const SizedBox(height: 20),
-                          Text('Localização', style: Theme.of(context).textTheme.bodyLarge),
-                          Text('Rua Flores de Mel, 69 - SP', style: Theme.of(context).textTheme.labelLarge),
+                          Text('Localização',
+                              style: Theme.of(context).textTheme.bodyLarge),
+                          Text(
+                            'Rua Flores de Mel, 69 - SP',
+                            style: Theme.of(context).textTheme.bodyLarge!.merge(
+                                  const TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                          ),
                         ],
                       ),
                     )
                   ],
                 ),
               ),
-              // _buildForm()
             ],
           ),
         ),
       ),
     );
   }
-
-
 }

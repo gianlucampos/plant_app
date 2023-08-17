@@ -6,6 +6,13 @@ void main() {
   runApp(const MainApp());
 }
 
+const textThemeDefault = TextTheme(
+  // headline1: TextStyle(fontSize: 96, fontWeight: FontWeight.w300),
+  displayLarge:
+      TextStyle(fontSize: 96, fontWeight: FontWeight.w300, wordSpacing: -1.5),
+  displayMedium: TextStyle(fontSize: 60, fontWeight: FontWeight.w300),
+);
+
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
@@ -22,20 +29,7 @@ class MainApp extends StatelessWidget {
           ),
           elevation: 1,
           shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))
-          ),
-        ),
-        textTheme: const TextTheme(
-          titleMedium: TextStyle(
-              fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),
-          titleSmall: TextStyle(
-              fontSize: 22, color: Colors.black87, fontWeight: FontWeight.w900),
-          bodyLarge: TextStyle(fontSize: 18),
-          labelLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          labelMedium: TextStyle(
-              fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
-          labelSmall: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.normal, color: Colors.white),
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(50))),
         ),
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.white, background: AppColors.background),
