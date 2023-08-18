@@ -3,6 +3,9 @@ import 'package:plant_app/core/app_colors.dart';
 import 'package:plant_app/pages/home/add_mascot_page.dart';
 import 'package:plant_app/pages/home/widgets/drawer_widget.dart';
 
+const linkGoogleMapsBackground =
+    '''https://img.freepik.com/premium-vector/city-map-any-kind-digital-info-graphics-print-publication-gps-map_403715-37.jpg?w=2000''';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -16,38 +19,52 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       key: _scaffoldKey,
       drawer: const DrawerWidget(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            GestureDetector(
-              child: const Icon(Icons.menu),
-              onTap: () => _scaffoldKey.currentState!.openDrawer(),
-            ),
-            SizedBox(
-              width: 320,
-              child: SearchBar(
-                leading: const Icon(Icons.search),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                surfaceTintColor:
-                    MaterialStateProperty.all<Color>(Colors.white),
-                hintText: 'Pesquisar local',
-                hintStyle: const MaterialStatePropertyAll(
-                    TextStyle(color: Colors.grey)),
+      body: Stack(
+        children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(linkGoogleMapsBackground),
+                fit: BoxFit.cover,
               ),
             ),
-            GestureDetector(
-              child: const Icon(Icons.place_outlined),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const AddMascotPage())),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  child: const Icon(Icons.menu),
+                  onTap: () => _scaffoldKey.currentState!.openDrawer(),
+                ),
+                SizedBox(
+                  width: 300,
+                  child: SearchBar(
+                    leading: const Icon(Icons.search),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    surfaceTintColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    hintText: 'Pesquisar local',
+                    hintStyle: const MaterialStatePropertyAll(
+                        TextStyle(color: Colors.grey)),
+                  ),
+                ),
+                GestureDetector(
+                  child: const Icon(Icons.place_outlined),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AddMascotPage())),
+                ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       bottomNavigationBar: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
