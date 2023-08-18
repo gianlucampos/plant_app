@@ -48,6 +48,7 @@ Widget _mascotCard({required int index, required BuildContext context}) {
     AppColors.darkGreen
   ];
   List<String> sapplings = [AppImages.plant1, AppImages.plant2, AppImages.plant3];
+  String choosedSapling = sapplings[index % 3];
 
   return Padding(
     padding: const EdgeInsets.only(right: 50, bottom: 10),
@@ -57,7 +58,7 @@ Widget _mascotCard({required int index, required BuildContext context}) {
       child: GestureDetector(
         onTap: () => Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const MascotPage()),
+          MaterialPageRoute(builder: (context) => MascotPage(saplingImage: choosedSapling)),
         ),
         child: Card(
           elevation: 5,
