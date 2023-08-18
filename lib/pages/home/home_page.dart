@@ -87,7 +87,7 @@ class _HomePageState extends State<HomePage> {
       height: 100,
       width: 250,
       decoration: BoxDecoration(
-          color: AppColors.green, borderRadius: BorderRadius.circular(35)),
+          color: AppColors.greenSecondary, borderRadius: BorderRadius.circular(35)),
       child: Center(
         child: ListTile(
           contentPadding: const EdgeInsets.symmetric(horizontal: 40),
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
       height: 100,
       width: 250,
       decoration: BoxDecoration(
-          color: AppColors.green, borderRadius: BorderRadius.circular(35)),
+          color: AppColors.greenSecondary, borderRadius: BorderRadius.circular(35)),
       child: ListTile(
         contentPadding: const EdgeInsets.symmetric(horizontal: 40, vertical: 5),
         title: Row(

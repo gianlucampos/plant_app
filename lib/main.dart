@@ -6,13 +6,6 @@ void main() {
   runApp(const MainApp());
 }
 
-const textThemeDefault = TextTheme(
-  // headline1: TextStyle(fontSize: 96, fontWeight: FontWeight.w300),
-  displayLarge:
-      TextStyle(fontSize: 96, fontWeight: FontWeight.w300, wordSpacing: -1.5),
-  displayMedium: TextStyle(fontSize: 60, fontWeight: FontWeight.w300),
-);
-
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
