@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
         brightness: Brightness.light,
         useMaterial3: true,
         appBarTheme: const AppBarTheme(
-          backgroundColor: AppColors.green,
+          backgroundColor: AppColors.darkGreen,
           iconTheme: IconThemeData(
             color: Colors.white, //change your color here
           ),

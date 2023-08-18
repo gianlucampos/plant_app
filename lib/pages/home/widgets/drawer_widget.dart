@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:plant_app/component/circle_avatar_component.dart';
 import 'package:plant_app/core/app_colors.dart';
+import 'package:plant_app/pages/home/mascots/my_mascotes_page.dart';
 import 'package:plant_app/pages/home/planting_info_page.dart';
 import 'package:plant_app/pages/home/profile_page.dart';
 
 Map<String, Widget> routes = {
   'profilePage': const ProfilePage(),
-  'mascotsPage': ProfilePage(),
+  'mascotsPage': MyMascotesPage(),
   'plantingInfoPage': const PlantingInfoPage(),
 };
 
