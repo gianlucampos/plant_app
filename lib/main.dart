@@ -33,6 +33,12 @@ class MainApp extends StatelessWidget {
         ),
         colorScheme: ColorScheme.fromSeed(
             seedColor: Colors.white, background: AppColors.background),
+        cardTheme: CardTheme(
+          color: Colors.white,
+          surfaceTintColor: Colors.white,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+        ),
       ),
       home: const Scaffold(body: WelcomePage()),
     );
