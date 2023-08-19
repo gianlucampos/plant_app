@@ -9,15 +9,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.3.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.2
 
+flutter_native_splash:
+  image: assets/icons/logo.png
+  color: "#9CB2BF"
+
 flutter:
   uses-material-design: true
 
   assets:
-#    - assets/
     - assets/images/
